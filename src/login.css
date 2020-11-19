@@ -1,0 +1,31 @@
+.main{
+    margin: auto;
+    height: 80px;
+    width: 80px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+}
+.button{
+    height: 35px;
+    width: 200px;
+    margin-top: 10px ;
+    color: white;
+    background: rgb(63, 207, 63);
+    /* font-size: 20px; */
+}
+.input{
+    height: 25px;
+    width: 200px;
+}
+.label{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    display: block;
+    font-size: 30px;
+    color: black;
+}
+.name {
+    color: blue;
+}

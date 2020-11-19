@@ -1,13 +1,21 @@
-import react from 'react';
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Login from "./components/Login";
 
 class App extends React.Component
 {
   render(){
     return(
-      <div>
-        <h1>Helllo</h1>
-      </div>
+      <Router>
+        <Switch>
+          <Route path="/" component={Login} />
+        </Switch>
+      </Router>
     )
   }
 }
