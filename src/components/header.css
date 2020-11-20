@@ -1,0 +1,24 @@
+.header {
+    padding: 5px;
+    width: 100%;
+    background: #0a0a0a;
+    color: white;
+    font-size: 16px;
+    display: flex;
+  }
+  .left {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .right {
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+  }
+  .header-text {
+      margin-left: 20px;
+      text-decoration: none;
+    color: #fff;
+    cursor:  pointer;
+  }
