@@ -27,13 +27,31 @@ class Dashboard extends React.Component{
     this.setState({deleteModal:false,selected:null})
   }
   confirmDelete=()=>{
-  ele=this.state.myList;
+  
     const index = this.state.selected;
         ele.splice(index,1)
         this.setState({myList:ele, deleteModal: false, selected: null})
       
   }
+  addMember=()=>{
+    var ele2=this.state.myList
+    var obj={
+      id:this.state.myList.length+1,
+      name:this.state.name,
+      email:this.state.email,
+      mobile:this.state.mobile
+  }
+  var ele1=obj
+  ele2.push(ele1)
+  //console.log('::: '+JSON.stringify(ele2))
+
+  this.setState({myList:ele2,addModal:false})
+
+  }
     render() {
+      ele=this.state.myList;
+      
+      
         return (
           
         <div style={{width:'100%',}}>
@@ -92,7 +110,7 @@ class Dashboard extends React.Component{
                 </div>
                 <div style={{display:"flex",marginTop:8,justifyContent:'center'}}>
                 <button style={{backgroundColor:'black',color:'white',marginRight:40}} onClick={()=>this.setState({addModal:false})}>Cancel</button>
-                <button style={{backgroundColor:'black',color:'white'}} onClick={this.confirmDelete}>Save</button>
+                <button style={{backgroundColor:'black',color:'white'}} onClick={this.addMember}>Save</button>
                 </div>
               </div>:null
             }

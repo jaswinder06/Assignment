@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../components/header.css';
+
+import * as Userdata from '../Userdata.json';
     
 class Header extends React.Component{
   
@@ -16,8 +18,8 @@ class Header extends React.Component{
             </div>
             <div className="right">
 
-            <p className="header-text"> Test user</p>
-            <p className="header-text"> Logout</p>
+            <p className="header-text"> {Userdata.name}</p>
+            <Link className="header-text" to="/"><p>Logout</p></Link>
             </div>
           </div>
         );
