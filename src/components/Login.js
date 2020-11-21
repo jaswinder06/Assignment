@@ -19,20 +19,33 @@ class Login extends React.Component
         document.getElementById("username").focus();
         return;
       }
+    //   if(!this.validateEmail(this.state.username)){
+    //     this.setState({'username_error':"Please enter a valid email!"});
+    //     document.getElementById('username').focus();
+    //     return;
+    // }
+    // validateEmail(email) 
+    // {
+    //   var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //   return regex.test(email);
+    // }
       if (this.state.password === null || this.state.password === undefined || this.state.password.trim().length === 0) {
         this.setState({error: true, message: "Please enter password."});
           document.getElementById("password").focus();
           return;
       }
+      // if(!this.validatePassword(this.state.password))
+      // {
+      //   this.setState({'password_error':"Please enter minimum of 8 characters with at least one lowercase character,one upppercase character ,one number & one special chracter!"});
+      //   document.getElementById('password').focus();
+      //   return;
+      // }
       if (this.state.username === Userdata.username && this.state.password === Userdata.password) {
         this.setState({error: false});
         this.props.history.push('/dashboard')
-      
-        
       } else {
        this.setState({error: true, message: "Incorrect username or password."});
       }
-      
   };
   render(){
     return(

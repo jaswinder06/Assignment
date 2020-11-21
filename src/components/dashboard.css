@@ -83,3 +83,10 @@ table, th, td ,tr{
    margin-top: 10px;
     text-align: left;
 }
+.cs{
+    justify-content:center;
+    display:"block";
+    text-align: center;
+    margin: auto;
+    height:180;width:500;
+}
