@@ -1,6 +1,7 @@
 import React from 'react';
 import '../login.css'
 import { withRouter } from 'react-router-dom';
+import data from '../data/member.json'
 import * as Userdata from '../Userdata.json'; 
 class Login extends React.Component
 {
@@ -12,6 +13,9 @@ class Login extends React.Component
       message: "",
       error: false
     }
+    }
+    componentDidMount(){
+window.localStorage.setItem('list',data)
     }
     onSubmit = () => {
       var regex =/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/;

@@ -1,6 +1,6 @@
 table, th, td ,tr{
     border: 1px solid black;
-    padding: 12px;
+    padding: 14px;
     margin-top: 30px;
     border-collapse: collapse;
     text-align: left; 
@@ -35,7 +35,7 @@ table, th, td ,tr{
     color: white;
     width: 180px;
     height: 30px;
-    margin-left:420px;
+    margin-left:100px;
     text-align: center;
     margin-top: 20px;
     font-size:normal;
@@ -78,7 +78,7 @@ table, th, td ,tr{
 
 }
 .last3{
-    font-size: medium;
+    font-size: 20px;
     padding: 5px;
    margin-top: 10px;
     text-align: left;

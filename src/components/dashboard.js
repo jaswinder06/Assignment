@@ -16,6 +16,21 @@ class Dashboard extends React.Component{
       email:'',
       mobile:''
     }
+    this.addMember=this.addMember.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.handleemail = this.handleemail.bind(this);
+    this.handlemobile= this.handlemobile.bind(this);
+
+  }
+  
+  handleChange(event) {
+    this.setState({name: event.target.value});
+  }
+  handleemail(event) {
+    this.setState({email: event.target.value});
+  }
+  handlemobile(event){
+    this.setState({mobile: event.target.value});
   }
   Add =() => {    
     this.setState({addModal:true})
@@ -33,27 +48,23 @@ class Dashboard extends React.Component{
         this.setState({myList:ele, deleteModal: false, selected: null})
       
   }
+  
   addMember=()=>{
-    var ele2=this.state.myList
-    var obj={
-      id:this.state.myList.length+1,
-      name:this.state.name,
-      email:this.state.email,
-      mobile:this.state.mobile
-  }
-  var ele1=obj
-  ele2.push(ele1)
-  //console.log('::: '+JSON.stringify(ele2))
-
-  this.setState({myList:ele2,addModal:false})
-
+    let ob={
+      'id':this.state.myList.length,
+      'name':this.state.name,
+      'email':this.state.email,
+      'mobile':this.state.mobile
+    }
+  
+    ele.push(ob)
+    console.log('ele:: '+JSON.stringify(ele))
+  
+  this.setState({mylist:ele,addModal:false})
   }
     render() {
       ele=this.state.myList;
-      
-      
         return (
-          
         <div style={{width:'100%',}}>
           <Header/>
           <div>
@@ -69,18 +80,18 @@ class Dashboard extends React.Component{
                   return (
                    <tr key={item.id}>
                    <th scope="row">{item.id}</th>
-                   <td>{item.name}</td>
+                   <td style={{color:'blue'}}>{item.name}</td>
                    <td>{item.email}</td>
-                   <td>{item.mobile}</td>
-                   <td><button onClick={this.delete.bind(this,index)}>Delete</button></td>
+                   <td style={{color:'blue'}}>{item.mobile}</td>
+                   <td><button style={{backgroundColor:'blue',color:'white'}} onClick={this.delete.bind(this,index)}>Delete</button></td>
                 </tr>)
               })}
         </tbody>
                 
               </table>
-              <input className = "last1" placeholder="Previous"></input>
-              <input className = "last2" placeholder="Displyaing 1 to 2 of 2"></input>
-              <input className ="last3" placeholder="Next"></input>
+              <button className = "last1" onClick = {()=>{console.log('previous pressed')}} >Previous</button>
+              <label className = "last2" >"Displyaing 1 to 2 of 2"</label>
+            <button className ="last3" onClick = {()=>{console.log('next pressed')}}> Next</button>
             </div>
             {
               this.state.addModal===true?<div style={{height:180,width:500,backgroundColor:'white',position:'absolute',
@@ -91,21 +102,21 @@ class Dashboard extends React.Component{
         style={{marginLeft:12}}
           id="name"
           type="text"  
-          onChange={(text) => this.setState({name: text})} 
+          onChange={this.handleChange} 
         />
         <br/>
         <input placeholder = "enter email"
         style={{marginLeft:12}}
           id = "em"
           type="text"  
-          onChange={(text) => this.setState({email: text })}
+          onChange={this.handleemail}
          />
          <br/>
         <input placeholder = "enter mobile no"
         style={{marginLeft:12}}
            id = "num"
           type="text"  
-          onChange={(text) => this.setState({mobile: text })}
+          onChange={this.handlemobile}
          />
                 </div>
                 <div style={{display:"flex",marginTop:8,justifyContent:'center'}}>
@@ -124,7 +135,6 @@ class Dashboard extends React.Component{
                 </div>
               </div>:null
             }
-            
           </div>
         );
 
